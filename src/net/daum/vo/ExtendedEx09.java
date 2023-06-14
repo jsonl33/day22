@@ -1,22 +1,22 @@
 package net.daum.vo;
 
-class ParentPoint{
-	protected int a = 10;
-	protected int b = 20;
-}
+import net.daum.model.*;
 
-class ChildPoint09 extends ParentPoint{
-	ParentPoint p = new ParentPoint();
-	int a = p.a;
-	int b = p.b;
+class ChildPoint09 extends ParentPoint09 implements ChildInterface {
+	ParentPoint09 p = new ParentPoint09();
+	
+	int a = p.getA();
+	int b = p.getB();
+
 	public void pr() {
-		System.out.print(a+" "+b);
+		System.out.print(a + " " + b);
 	}
+	
 }
 
 public class ExtendedEx09 {
 	public static void main(String[] args) {
-		ChildPoint09 c = new ChildPoint09();
-		c.pr();
+		ChildPoint09 cp = new ChildPoint09();
+		cp.pr();
 	}
 }
